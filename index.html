@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mock JD Vance Email Generator</title>
+    <title>🔥 Hilarious JD Vance Email Generator 🔥</title>
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -10,31 +10,148 @@
             margin: auto; 
             padding: 20px; 
             line-height: 1.6; 
-            background: #f0f8ff; 
+            background: linear-gradient(to right, #f0f8ff, #e0f7fa);
             color: #222;
         }
-        h1 { color: #2c3e50; text-align: center; margin-bottom: 10px; }
+        h1 { 
+            color: #d35400; 
+            text-align: center; 
+            margin-bottom: 5px;
+            text-shadow: 1px 1px #fff;
+        }
         p { font-size: 16px; text-align: center; }
         input, textarea { 
             width: 100%; 
             margin: 10px 0; 
-            padding: 10px; 
+            padding: 12px; 
             font-size: 15px; 
-            border: 1px solid #ccc; 
-            border-radius: 5px; 
+            border: 2px solid #ccc; 
+            border-radius: 10px; 
             box-sizing: border-box;
+            transition: 0.3s;
         }
+        input:focus, textarea:focus { border-color: #e74c3c; box-shadow: 0 0 5px #e74c3c; }
         label { font-weight: bold; margin-top: 10px; display: block; }
-        textarea#emailOutput { height: 400px; font-family: monospace; }
+        textarea#emailOutput { height: 400px; font-family: monospace; border: 2px dashed #f39c12; background: #fff8dc; padding: 15px; }
         .buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; justify-content: center; }
         button, .coffee { 
-            padding: 12px 20px; 
+            padding: 14px 25px; 
             font-size: 16px; 
             border: none; 
-            border-radius: 8px; 
+            border-radius: 12px; 
             cursor: pointer; 
             text-decoration: none; 
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        button.send-email {
+            background: #e74c3c; color: white; font-weight: bold;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        button.send-email:hover { background: #c0392b; transform: scale(1.08) rotate(-2deg); }
+        .coffee {
+            background: #f39c12; color: white; font-weight: bold;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+        .coffee:hover { background: #d68910; transform: scale(1.1) rotate(2deg); }
+        #memePreview { display:none; max-width:100%; border-radius:15px; margin-top:15px; box-shadow: 3px 3px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+    <h1>😂 Hilarious JD Vance Email Generator 😂</h1>
+    <p>Customize your roast, include a meme, and send a playful message! ✨</p>
+
+    <label>Your Name:</label>
+    <input type="text" id="senderName" placeholder="Enter your full name">
+
+    <label>Nickname for JD Vance:</label>
+    <input type="text" id="vanceNick" placeholder="e.g., 'The Bald Wonder'">
+
+    <label>Ridiculous Activity or Location:</label>
+    <input type="text" id="ridiculousActivity" placeholder="e.g., 'motorcade through the Cotswolds'">
+
+    <label>Extra Funny Detail:</label>
+    <input type="text" id="funnyDetail" placeholder="e.g., 'turning a fish pond into chaos'">
+
+    <label>Embarrassing Outfit or Style Choice:</label>
+    <input type="text" id="embarrassingStyle" placeholder="e.g., 'striped waistcoat and neon socks'">
+
+    <label>Ridiculous Quote or Comment:</label>
+    <input type="text" id="ridiculousQuote" placeholder="e.g., 'I am the King of Fish'">
+
+    <label>Animal or Object Comparison:</label>
+    <input type="text" id="comparison" placeholder="e.g., 'like a startled walrus on a scooter'">
+
+    <label>JD Vance Meme Image URL:</label>
+    <input type="text" id="memeURL" placeholder="Paste image URL here, e.g., https://example.com/vance-meme.jpg">
+    <img id="memePreview" src="" alt="JD Vance Meme Preview">
+
+    <textarea id="emailOutput" placeholder="Your email will appear here..."></textarea>
+
+    <div class="buttons">
+        <button class="send-email" onclick="generateEmail()">🎨 Generate Email</button>
+        <button class="send-email" onclick="sendEmail()">✉️ Send Email</button>
+        <a href="https://www.buymeacoffee.com/LupeSolutions" target="_blank" class="coffee"
+           onclick="gtag('event', 'click', {'event_category':'CTA','event_label':'Buy Me a Coffee Top'});">
+           ☕ Buy Me a Coffee!
+        </a>
+    </div>
+
+    <script>
+        function generateEmail() {
+            const sender = document.getElementById('senderName').value.trim() || "[Your Name]";
+            const nick = document.getElementById('vanceNick').value.trim() || "JD Vance";
+            const activity = document.getElementById('ridiculousActivity').value.trim() || "chaotic adventures";
+            const detail = document.getElementById('funnyDetail').value.trim() || "baffling the locals";
+            const style = document.getElementById('embarrassingStyle').value.trim() || "questionable outfit choices";
+            const quote = document.getElementById('ridiculousQuote').value.trim() || "bizarre statements";
+            const comparison = document.getElementById('comparison').value.trim() || "like a startled walrus on a scooter";
+            const memeURL = document.getElementById('memeURL').value.trim();
+
+            // Show meme preview
+            const memePreview = document.getElementById('memePreview');
+            if(memeURL) {
+                memePreview.style.display = "block";
+                memePreview.src = memeURL;
+            } else {
+                memePreview.style.display = "none";
+                memePreview.src = "";
+            }
+
+            const memeHTML = memeURL ? `\n\n📸 [Check out this meme of ${nick} here](${memeURL})` : "";
+
+            const emailBody = `
+💥 Dear ${nick}, 💥
+
+Congratulations on your recent UK visit! Your **${activity}** has left the nation both horrified and highly entertained 😂. Watching you **${detail}** was unforgettable, though many are still recovering mentally. 🥴
+
+Of course, we cannot forget your **${style}**, which paired wonderfully with your cancelled pub visit 🍺🚫 and general lack of self-awareness. The locals were undoubtedly relieved. And your comment that "**${quote}**" will surely live in infamy 🤯.
+
+Watching you navigate this trip **${comparison}** has been nothing short of a national spectacle 🎭. Perhaps next time, consider quieter hobbies: 🧶 knitting, 🐦 birdwatching, or 🛋 lounging on a couch in Ohio.
+
+${memeHTML}
+
+With the utmost “admiration” for your dedication to confounding the world 🤪,
+
+✨ ${sender} ✨
+`;
+            document.getElementById('emailOutput').value = emailBody;
+        }
+
+        function sendEmail() {
+            const body = document.getElementById('emailOutput').value.trim();
+            if (!body) {
+                alert("Please generate the email first!");
+                return;
+            }
+            const recipients = "jd.vance@sbc.senate.gov"; 
+            const subject = "Thoughts on Your UK Visit 🤔";
+            const mailtoLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>            text-align: center;
             transition: all 0.3s ease;
         }
         button.send-email {
