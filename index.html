@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock JD Vance Email Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; line-height: 1.6; background: #f4f4f4; }
+        textarea, input { width: 100%; margin: 10px 0; padding: 8px; font-size: 14px; }
+        button { background: #c62828; color: white; padding: 10px 15px; font-size: 16px; border: none; cursor: pointer; }
+        button:hover { background: #a91414; }
+        h1 { color: #333; }
+    </style>
+<!-- Top CTAs -->
+    <div class="cta-buttons">
+      <a href="https://www.buymeacoffee.com/LupeSolutions" target="_blank" class="coffee"
+         onclick="gtag('event', 'click', {'event_category':'CTA','event_label':'Buy Me a Coffee Top'});">
+         ☕ Support Me on Buy Me a Coffee
+      </a>
+</div>
+</head>
+<body>
+    <h1>Generate a Humorous Email to JD Vance</h1>
+    <p>Fill in the details below to create a funny, editable email to send.</p>
+
+    <label>Your Name:</label>
+    <input type="text" id="senderName" placeholder="Enter your full name">
+
+    <label>Nickname for JD Vance:</label>
+    <input type="text" id="vanceNick" placeholder="e.g., 'The Bald Wonder'">
+
+    <label>Ridiculous Activity or Location:</label>
+    <input type="text" id="ridiculousActivity" placeholder="e.g., 'motorcade through the Cotswolds'">
+
+    <label>Extra Funny Detail:</label>
+    <input type="text" id="funnyDetail" placeholder="e.g., 'turning a fish pond into chaos'">
+
+    <label>Embarrassing Outfit or Style Choice:</label>
+    <input type="text" id="embarrassingStyle" placeholder="e.g., 'striped waistcoat and neon socks'">
+
+    <label>Ridiculous Quote or Comment:</label>
+    <input type="text" id="ridiculousQuote" placeholder="e.g., 'I am the King of Fish'">
+
+    <label>Animal or Object Comparison:</label>
+    <input type="text" id="comparison" placeholder="e.g., 'like a startled walrus on a scooter'">
+
+    <button onclick="generateEmail()">Generate Email</button>
+
+    <textarea id="emailOutput" rows="35" placeholder="Your email will appear here..."></textarea>
+
+    <script>
+        function generateEmail() {
+            const sender = document.getElementById('senderName').value.trim() || "[Your Name]";
+            const nick = document.getElementById('vanceNick').value.trim() || "JD Vance";
+            const activity = document.getElementById('ridiculousActivity').value.trim() || "chaotic adventures";
+            const detail = document.getElementById('funnyDetail').value.trim() || "baffling the locals";
+            const style = document.getElementById('embarrassingStyle').value.trim() || "questionable outfit choices";
+            const quote = document.getElementById('ridiculousQuote').value.trim() || "bizarre statements";
+            const comparison = document.getElementById('comparison').value.trim() || "like a startled walrus on a scooter";
+
+            const emailBody = `
+Dear ${nick},
+
+Congratulations on your recent UK visit. Your ${activity} has left the nation both horrified and highly entertained. Watching you ${detail} was unforgettable, though many are still trying to recover emotionally. 
+
+Of course, we cannot forget your ${style}, which paired wonderfully with your cancelled pub visit and general lack of self-awareness. The locals were undoubtedly relieved. And your comment that "${quote}" will surely live in infamy, alongside your viral antics.  
+
+Watching you navigate this trip ${comparison} has been nothing short of a national spectacle. Perhaps next time, consider quieter hobbies: birdwatching, knitting, or lounging on a couch in Ohio.  
+
+With the utmost “admiration” for your dedication to confounding the world,
+
+${sender}
+`;
+
+            document.getElementById('emailOutput').value = emailBody;
+        }
+    </script>
+</body>
+</html>
