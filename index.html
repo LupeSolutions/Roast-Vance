@@ -1,40 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mock JD Vance Email Generator</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; line-height: 1.6; background: #f4f4f4; }
-        textarea, input { width: 100%; margin: 10px 0; padding: 8px; font-size: 14px; }
-        button { background: #c62828; color: white; padding: 10px 15px; font-size: 16px; border: none; cursor: pointer; }
-        button:hover { background: #a91414; }
-        h1 { color: #333; }
-    </style>
-<!-- Top CTAs -->
-    <div class="cta-buttons">
-      <a href="https://www.buymeacoffee.com/LupeSolutions" target="_blank" class="coffee"
-         onclick="gtag('event', 'click', {'event_category':'CTA','event_label':'Buy Me a Coffee Top'});">
-         ☕ Support Me on Buy Me a Coffee
-      </a>
-</div>
-</head>
-<body>
-    <h1>Generate a Humorous Email to JD Vance</h1>
-    <p>Fill in the details below to create a funny, editable email to send.</p>
+const memeURL = document.getElementById('memeURL').value.trim();
+const memeHTML = memeURL ? `\n\n[Check out this meme of ${nick} here](${memeURL})` : "";
+document.getElementById('memePreview').style.display = memeURL ? "block" : "none";
+document.getElementById('memePreview').src = memeURL;
 
-    <label>Your Name:</label>
-    <input type="text" id="senderName" placeholder="Enter your full name">
+const emailBody = `
+Dear ${nick},
 
-    <label>Nickname for JD Vance:</label>
-    <input type="text" id="vanceNick" placeholder="e.g., 'The Bald Wonder'">
+Congratulations on your recent UK visit. Your ${activity} has left the nation both horrified and highly entertained. Watching you ${detail} was unforgettable, though many are still trying to recover emotionally. 
 
-    <label>Ridiculous Activity or Location:</label>
-    <input type="text" id="ridiculousActivity" placeholder="e.g., 'motorcade through the Cotswolds'">
+Of course, we cannot forget your ${style}, which paired wonderfully with your cancelled pub visit and general lack of self-awareness. The locals were undoubtedly relieved. And your comment that "${quote}" will surely live in infamy, alongside your viral antics.  
 
-    <label>Extra Funny Detail:</label>
-    <input type="text" id="funnyDetail" placeholder="e.g., 'turning a fish pond into chaos'">
+Watching you navigate this trip ${comparison} has been nothing short of a national spectacle. Perhaps next time, consider quieter hobbies: birdwatching, knitting, or lounging on a couch in Ohio.
 
-    <label>Embarrassing Outfit or Style Choice:</label>
+${memeHTML}
+
+With the utmost “admiration” for your dedication to confounding the world,
+
+${sender}
+`;    <label>Embarrassing Outfit or Style Choice:</label>
     <input type="text" id="embarrassingStyle" placeholder="e.g., 'striped waistcoat and neon socks'">
 
     <label>Ridiculous Quote or Comment:</label>
