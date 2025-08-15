@@ -111,19 +111,6 @@
             const style = document.getElementById('embarrassingStyle').value.trim() || "questionable outfit choices";
             const quote = document.getElementById('ridiculousQuote').value.trim() || "bizarre statements";
             const comparison = document.getElementById('comparison').value.trim() || "like a startled walrus on a scooter";
-            const memeURL = document.getElementById('memeURL').value.trim();
-
-            // Show meme preview
-            const memePreview = document.getElementById('memePreview');
-            if(memeURL) {
-                memePreview.style.display = "block";
-                memePreview.src = memeURL;
-            } else {
-                memePreview.style.display = "none";
-                memePreview.src = "";
-            }
-
-            const memeHTML = memeURL ? `\n\n📸 [Check out this meme of ${nick} here](${memeURL})` : "";
 
             const emailBody = `
 💥 Dear ${nick}, 💥
